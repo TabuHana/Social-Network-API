@@ -12,4 +12,7 @@ app.use(require('./routes'))
 db.sync()
 app.listen(process.env.PORT || 3000)
 
-//need to import express and mongoose
+/* TASKS:
+- import express and mongoose
+- create connections in config
+*/
