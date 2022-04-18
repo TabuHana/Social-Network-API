@@ -13,6 +13,10 @@ db.sync()
 app.listen(process.env.PORT || 3000)
 
 /* TASKS:
-- import express and mongoose
-- create connections in config
+- import express and mongoose/ done
+- create connections in config/ done?
+
+- expand routes --
+  = routes index
+  = routes apis
 */

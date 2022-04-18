@@ -20,6 +20,7 @@
   "homepage": "https://github.com/TabuHana/Social-Network-API#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "mongoose": "^6.3.0"
+    "mongoose": "^6.3.0",
+    "nodemon": "^2.0.15"
   }
 }
