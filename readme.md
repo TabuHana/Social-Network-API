@@ -15,7 +15,7 @@
 
   ***
   ## Description
-  Backend API for a social media app using MongoDB
+   Many social networking platforms are founded on enormous amount of data and it's important to understand how to build and structure these APIs. Likewise, this application generates an API for a social network web application, where users can share their thoughts, react to friends' thoughts, and create a friend list. It uses Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
   ***
   ## Technologies Used
