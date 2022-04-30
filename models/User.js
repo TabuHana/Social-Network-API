@@ -1,30 +1,43 @@
-const mongoose = require('mongoose')
+const { Schema, model } = require('mongoose')
 
-const userSchema = new mongoose.Schema({
-  userName: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, 'Must match an email address!']
+    },
+    thoughts: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Thought'
+    }],
+    friends: [{
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }],
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  thoughts: {
-    type: Array,
-    required: false,
-    ref: 'Thought'
-  },
-  friends: {
-    type: Array,
-    required: false,
-    ref: 'User'
-  }
-})
+  {
+    toJSON: {
+      virtuals: true
+    },
+    id: false
+  })
 
 const User = model('User', userSchema)
+
+//virtual property friendCount to get number of friends
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length
+})
+
+const handleError = (err) => console.error(err)
 
 module.exports = User
 // ** User **:
