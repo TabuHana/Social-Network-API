@@ -19,11 +19,11 @@
 
   ***
   ## Technologies Used
-  
+  MongoDB, Express, and Nodemon
 
   ***
   ## Visual Presentation
-  ![VisualPresentation](images/readmeVisualPresentation.png)
+  Youtube Video (https://youtu.be/09C7oW8-g-4)
 
   ***
   ## Installation
