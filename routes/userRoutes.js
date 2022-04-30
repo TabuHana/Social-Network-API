@@ -41,6 +41,16 @@ router.put('/users/:id', async ({ body, params: { id } }, res) => {
   }
 })
 
+//DELETE USER BY ID
+router.delete('/users/:id', async ({ params: { id } }, res) => {
+  try {
+    const user = await User.findByIdAndDelete(id)
+    res.json('User deleted')
+  } catch (error) {
+    res.status(500).json({ error })
+  }
+})
+
 //FRIENDS
 //ADD NEW FRIEND TO USER'S FRIEND LIST
 router.post('/users/:id/friends/:friendId', async ({ params: { id, friendId } }, res) => {
